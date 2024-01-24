@@ -1,0 +1,87 @@
+# GO MAPS
+---------
+
+* Introduction to Maps
+----------------------
+Think of a list of contacts on a phone. We can search by name to find the associated phone number. In programming, we often need to connect one data piece with another. This association 
+is what maps are perfect for!
+
+A map is an unordered collection of keys and values. Here is an example of connecting a key of type string with a value of type int:
+
+Key	Value
+Joe	2126778723
+Angela	4089978763
+Shawn	3143776876
+Terell	5026754531
+
+We are able to access map values by looking them up with a key. Unlike an array, values in a map are not accessed by indices. Maps allow for very fast lookups by organizing the values for 
+retrieval.
+
+We use maps for tasks such as:
+
+	. Counting the number of times unique names appear in a list.
+	. Mapping simple identifiers, such as an employee id, to related values.
+	. Anytime we need to associate any piece of data with another!
+
+Throughout this lesson, we will introduce:
+
+	. Creating maps
+	. Accessing map values
+	. Adding and modifying values
+	. Removing key-value pairs
+
+To begin using maps, we will first have to create them. We will get started in the next exercise!
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+We’ve provided an example of a map! Try running the program and look at the output.
+
+maps.go
+-------
+package main
+
+import "fmt"
+
+func main() {
+	// Create a simple contact list.
+	contacts := map[string]int{
+		"Joe":    2126778723,
+		"Angela": 4089978763,
+		"Shawn":  3143776876,
+		"Terell": 5026754531,
+	}
+	// Print out all the contacts
+	fmt.Println(contacts)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
