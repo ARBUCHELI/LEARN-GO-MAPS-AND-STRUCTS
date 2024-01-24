@@ -58,6 +58,103 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Map Creation
+--------------
+In Go, there are two ways to create a map. We’ll be covering both in this exercise.
+
+* Creating a map with make
+--------------------------
+We can use the make function to create an empty map. The format is:
+
+	variableName := make(map[keyType]valueType)
+
+For example, we could create an empty map of product name to price:
+
+	prices := make(map[string]float32)
+
+Creating empty maps is useful when we don’t know what the content of our map will be. But sometimes the content of the map is known ahead of time.
+
+* Creating a map with values
+----------------------------
+If we know some map values, we can specify them as follows:
+
+variableName := map[keyType]valueType{
+    name1: value1,
+    name2: value2,
+    name3: value3,
+}
+
+For example, we can create a contact list with:
+
+contacts := map[string]int{
+    "Joe":    2126778723,
+    "Angela": 4089978763,
+    "Shawn":  3143776876,
+    "Terell": 5026754531,
+}
+
+We’ve learned how to create our maps, but how do we access the elements within them? We’ll do that in the next exercise. Before that, let’s practice creating some maps!
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Let’s create some code to run a donut shop.
+
+Use the make syntax to create a map named orders with a string key type and float32 value type. We can use orders to keep track of how much our customers are spending.
+
+Then use the fmt.Println function to print out your empty map of orders.
+
+
+Hint
+We could create an empty map of employee name to employee id like so:
+
+employees := make(map[string]int)
+fmt.Println(employees)
+
+Checkpoint 2 Passed
+2.
+We need to keep track of our donut inventory!
+
+Create a map donuts with a key type of string and a value of int. Use the following table for the map’s values:
+
+Kind	Count
+frosted	10
+chocolate	15
+jelly	8
+Then, use the fmt.Println function to print out your map of donut inventory.
+
+
+Hint
+When the initial map key-value pairs are known, we use the initializer syntax. So for example to keep track of supplies:
+
+supplies := map[string]int{
+    "napkins":    500,
+    "straws":     200,
+    "large cups": 100,
+}
+fmt.Println(supplies)
+
+maps.go
+-------
+package main
+
+import "fmt"
+
+func main() {
+  // Add your code here
+  orders := make(map[string]float32)
+  fmt.Println(orders)
+
+  donuts := map[string]int {
+    "frosted": 10,
+    "chocolate": 15,
+    "jelly": 8,
+  }
+  fmt.Println(donuts)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
