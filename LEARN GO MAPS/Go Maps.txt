@@ -156,6 +156,167 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Accessing values in the Map
+Maps make it easy to look up values and store the value in a variable for further use:
+
+variable := yourMap[keyValue]
+
+But what happens if we never added the requested key-value pair to the map but try to look it up?
+
+If a key is not in the map, a default value for value type is returned. We can also get a second return value to determine if the key is in the map.
+
+customer,status := customers["billy"]
+
+if status {
+  fmt.Println("we found the customer")
+} else {
+  fmt.Println("no such customer!")
+}
+
+Notice how we have a boolean called status that we can check. When status is true, the key was found in our map!
+
+Now we know how to access values in our maps. But how do we add or change these values? We will do that in the next exercise but let’s first practice accessing maps.
+
+Instructions
+Checkpoint 1 Passed
+1.
+Let’s create a variable called firstChoice that will store the value contained at the key frosted in donuts.
+
+Then let’s print out the value of firstChoice.
+
+
+Hint
+If we were looking up how many napkins we have in our stockroom:
+
+item = supplies["napkins"]
+fmt.Println(item)
+
+Checkpoint 2 Passed
+2.
+Now let’s see what happens when we don’t sell some kind of donut. Let’s look up bavarian cream and save the count and status in secondChoice,status.
+
+Then let’s print out the value of secondChoice with fmt.Println.
+
+And finally, print out the value of status with another print statement.
+
+
+Hint
+If we want to look up a customer’s balance and status if the customer is in our map:
+
+balance,status = customers["Johnson"]
+fmt.Println(balance)
+
+Checkpoint 3 Passed
+3.
+Next let’s add an if-then statement.
+
+Print out the number of donuts if the status is true and otherwise print We do not sell that donut!
+
+
+Hint
+For a customer balance lookup this would be:
+
+balance,status = customers["Johnson"]
+if status {
+  fmt.Println(balance)
+} else {
+  fmt.Println("No customer found with that name!")
+}
+
+maps.go
+-------
+Accessing values in the Map
+Maps make it easy to look up values and store the value in a variable for further use:
+
+variable := yourMap[keyValue]
+
+But what happens if we never added the requested key-value pair to the map but try to look it up?
+
+If a key is not in the map, a default value for value type is returned. We can also get a second return value to determine if the key is in the map.
+
+customer,status := customers["billy"]
+
+if status {
+  fmt.Println("we found the customer")
+} else {
+  fmt.Println("no such customer!")
+}
+
+Notice how we have a boolean called status that we can check. When status is true, the key was found in our map!
+
+Now we know how to access values in our maps. But how do we add or change these values? We will do that in the next exercise but let’s first practice accessing maps.
+
+Instructions
+Checkpoint 1 Passed
+1.
+Let’s create a variable called firstChoice that will store the value contained at the key frosted in donuts.
+
+Then let’s print out the value of firstChoice.
+
+
+Hint
+If we were looking up how many napkins we have in our stockroom:
+
+item = supplies["napkins"]
+fmt.Println(item)
+
+Checkpoint 2 Passed
+2.
+Now let’s see what happens when we don’t sell some kind of donut. Let’s look up bavarian cream and save the count and status in secondChoice,status.
+
+Then let’s print out the value of secondChoice with fmt.Println.
+
+And finally, print out the value of status with another print statement.
+
+
+Hint
+If we want to look up a customer’s balance and status if the customer is in our map:
+
+balance,status = customers["Johnson"]
+fmt.Println(balance)
+
+Checkpoint 3 Passed
+3.
+Next let’s add an if-then statement.
+
+Print out the number of donuts if the status is true and otherwise print We do not sell that donut!
+
+
+Hint
+For a customer balance lookup this would be:
+
+balance,status = customers["Johnson"]
+if status {
+  fmt.Println(balance)
+} else {
+  fmt.Println("No customer found with that name!")
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
