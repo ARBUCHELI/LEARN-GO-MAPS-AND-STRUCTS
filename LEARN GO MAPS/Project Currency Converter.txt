@@ -1,0 +1,187 @@
+# PROJECT
+---------
+
+* Currency Converter
+--------------------
+In this project, we will be setting up an interactive currency converter.
+
+You will input a dollar amount, then a target currency. The currency converter will convert your dollars into the target currency and display the result to you.
+
+We will need to write code for the following:
+
+	. Creating a map of currency conversion rates.
+
+	. Inputting an amount and a currency type.
+
+	. Using the map to convert the dollars.
+
+* Creating the Currency Map
+---------------------------
+1.
+Let’s get started by creating a currencies map inside of main. The map will store entries consisting of:
+
+	. A currency (such as JPY or EUR) using strings
+
+	. A conversion rate (such as 130.2 or 0.95) using float32s
+
+These rates will convert the amount from dollars into the target currency.
+
+
+Hint
+A way to create a map is:
+
+m := map[string]int{"Tom": 10000, "Sally": 20000}
+
+Currency rates will be float32s instead of ints.
+
+* Inputting Target Amount and Currency
+--------------------------------------
+2.
+First, let’s declare two variables:
+
+	. dollarAmount, a float32
+
+	. currency, a string
+
+These variables will store the values input by the user.
+
+
+Hint
+We need a float32 and a string variable. We can declare variables with syntax like:
+
+var age int
+var name string
+
+3.
+Next, let’s get the input from the user.
+
+Use the fmt package to display a prompt to the user, then Scan the input into a reference to the dollarAmount variable.
+
+
+Hint
+To display a prompt to the user:
+
+fmt.Println("Please enter your age")
+
+To accept input from the user into a variable:
+
+fmt.Scan(&age)
+
+4.
+We should validate that the user entered something useful.
+
+If the input is not a valid float, then the dollarAmount variable will have a value of 0. Display an error message if this is the case.
+
+Have an else statement for the rest of the program’s logic.
+
+
+Hint
+To accept input from the user into a variable:
+
+fmt.Scan(&stockPrice)
+if stockPrice == 0 {
+  fmt.Println("Invalid stock price.")
+} else {
+  // rest of your code
+}
+
+5.
+Next, use the fmt package to ask for the target currency and scan it into the currency variable.
+
+
+Hint
+To display a prompt to the user:
+
+fmt.Println("Please enter your name")
+
+To accept input from the user into a variable:
+
+fmt.Scan(&name)
+
+* Convert the Currency
+----------------------
+6.
+Now let’s get the currency conversion rate in the map, using the currency entered by the user as the key.
+
+Remember that the currency might not be a valid key.
+
+When you lookup the currency in the map, initialize two variables:
+
+	. One for the rate from the map.
+
+	. One to track if the currency was in the map, isValid.
+
+Hint
+When looking up an entry in a map, you can use this syntax:
+
+val, isInMap := dict[key]
+if isInMap {
+    // val is valid
+}
+
+This will initialize two variables:
+
+	. val - the value in the map (zero value if key is not in the map)
+
+	. match - true if the key is in the map, otherwise false
+
+7.
+If isValid is true then we can use rate to perform the currency conversion. The amount of target currency is the rate multiplied by the dollarAmount.
+
+Display an error message instead if the currency was not in the map.
+
+
+Hint
+To use a retrieved value:
+
+val, isInMap := dict[key]
+if isInMap {
+    fmt.Println("We got", val, "from the map)
+} else {
+    fmt.Println(key, "was not found in the map")
+}
+
+* Running The Program
+---------------------
+8.
+Use the go run terminal command to run our program.
+
+
+Hint
+The syntax for the go run command is:
+
+go run currency.go
+
+currency.go
+-----------
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+ currencies := map[string]float32{
+  "EUR": 0.95,
+  "JPY": 130,
+ } 
+
+ var dollarAmount float32
+ var currency string
+ fmt.Println("Please enter a dollar amount:")
+ fmt.Scan(&dollarAmount)
+ if dollarAmount == 0 {
+  fmt.Println("Invalid dollar amount.")
+ } else {
+    fmt.Println("Please enter a currency (EUR or JPY):")
+    fmt.Scan(&currency)
+
+    rate, isValid := currencies[currency]
+    if isValid {
+      fmt.Println(dollarAmount, "USD converts to", rate*dollarAmount, currency)
+    } else {
+      fmt.Println("Cannot convert USD to", currency, ".")
+    }
+ }
+}
+
