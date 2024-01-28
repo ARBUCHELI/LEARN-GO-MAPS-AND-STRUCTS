@@ -1,0 +1,77 @@
+# STRUCTS IN GO
+---------------
+
+* Introduction
+--------------
+We often have many variables related to each other, but managing using them all together can be a headache. Luckily, Go provides us with a way to group several variables into one custom 
+data type. These types make the code cleaner, more intuitive, and less error-prone.
+
+In Go, grouping together related variables is done using a struct. Throughout this lesson we will explore:
+
+	. What a struct is
+
+	. How to define a struct
+
+	. How to access and modify a struct’s fields
+
+	. How to write functions that work with structs
+
+	. How to nest structs inside each other
+
+With structs, we can define custom types that allow us to handle any kind of related data. To use these structs, we need to define what is inside of it. In the next exercise, we will 
+discuss how to define structs we can use in our programs.
+
+introduction.go
+---------------
+package main
+
+import "fmt"
+
+type Pet struct {
+	name    string
+	petType string
+	age     int
+}
+
+func main() {
+	nuggets := Pet{"Nuggets", "dog", 4}
+	mittens := Pet{"Mittens", "cat", 7}
+	robin := Pet{"Robin", "bird", 2}
+	fmt.Println(nuggets)
+	fmt.Println(mittens)
+	fmt.Println(robin)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
