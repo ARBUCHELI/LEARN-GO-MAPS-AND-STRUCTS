@@ -148,6 +148,93 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Creating an Instance of a Struct
+----------------------------------
+We’ve defined our structs, but how do we create variables of that type? To use a struct we just defined, we have to create an instance of it. Assume we defined Point from the last 
+exercise. We could create an instance of it like so:
+
+p1 := Point{x: 10, y: 12}
+
+or
+
+var p1 = Point{x: 10, y: 12}
+
+Using this syntax, we can define values for each of the struct’s fields. However, Go allows us to rely on default values as well. We can omit fields:
+
+p1 := Point{x: 10}
+// y will be set to 0
+
+In fact, we can omit all fields to rely only on default values:
+
+p1 := Point{}
+// x and y will be set to 0
+
+The order of our struct definition allows us to avoid labeling our fields. The values are assigned from left to right according to how the fields are defined in the struct from top to 
+bottom.
+
+p1 := Point{10, 12}
+// Same as var p1 = Point{10, 12}
+
+When not using labels, we must provide values for every field; otherwise, our code will not compile.
+
+We’ve learned how to create struct instances, but how do we use them? In the next exercise, we will discover how to access and modify a struct’s values in our programs. For now, let’s 
+practice creating some instances!
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+A local school needs our help organizing its data.
+
+Given the struct Student, create an instance called peter which represents the student named Peter Bookman who is 16 years old and is in grade 11.
+
+Print peter when finished.
+
+
+Hint
+Recall that creating an instance of a struct is done like so:
+
+p1 := Point{x: 10, y: 12}
+
+or
+
+p1 := Point{10,  12}
+
+Checkpoint 2 Passed
+2.
+Create a second instance of Student called scott which represents the student Scott Peterson who is in 12th grade (notice Scott’s age is not defined).
+
+Print scott when finished.
+
+
+Hint
+Since age is not defined, we have to instantiate the struct with syntax similar to:
+
+p1 := Point{x: 10}
+
+exercise3.go
+------------
+package main
+
+import "fmt"
+
+type Student struct {
+	firstName string
+	lastName  string
+	age       int
+	grade     int
+}
+
+func main() {
+	// Define your instances here
+  peter := Student{"Peter", "Bookman", 16, 11}
+  fmt.Println(peter)
+
+  scott := Student{firstName: "Scott", lastName: "Peterson", grade: 12}
+  fmt.Println(scott)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
