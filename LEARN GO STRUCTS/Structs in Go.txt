@@ -44,6 +44,144 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Defining a Struct
+-------------------
+We’ve just learned the importance of structs in grouping complex data types. But how do we define the structs we’ll use in our programs? In this exercise, we will introduce the syntax for 
+defining structs.
+
+The definition of a struct includes its name and its fields. A field is one of the internal variables inside a struct. We use the following template:
+
+// Struct names begin with a capital letter in Go
+type NameOfStruct struct {
+  // Struct fields go here
+}
+
+Let’s say we want to define a 2D point with an x and y coordinate. We could define two variables x and y and use them throughout our program. However, using multiple related variables in 
+this way is error-prone. We might use x when we mean y, and dealing with many points could cause confusion.
+
+A better way to represent a 2D point is to create a struct called Point which contains both coordinates. Defining Point in this way logically groups together the relevant data types. We 
+would define the struct for Point like so:
+
+type Point struct {
+  x int
+  y int
+}
+
+Using this new type, we would be able to pass Point information around our program as a single variable!
+
+Now that have our struct defined, we need to be able to use them. In the next exercise will learn to create instances of our defined structs. First, let’s practice defining them in our 
+programs.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+We are going to make a struct that holds country information!
+
+Let’s get started by defining an empty struct called Country.
+
+We will fill in the fields at later checkpoints.
+
+
+Hint
+Recall the template for defining a struct:
+
+type Pet struct {
+// Fields of Pet Go here
+}
+
+Checkpoint 2 Passed
+2.
+Inside the Country struct, define a field called name of type string.
+
+
+Hint
+We can define string fields like so:
+
+type Random struct {
+  name string
+}
+
+Checkpoint 3 Passed
+3.
+Now define a variable called capital of type string that will represent the name of the country’s capital.
+
+
+Hint
+Recall from earlier how we defined multiple fields inside of Point:
+
+type Point struct {
+  x int
+  y int
+}
+
+Checkpoint 4 Passed
+4.
+Add two fields inside of Country, latitude and longitude, of type float32 that will represent a country’s position.
+
+
+Hint
+These variables are defined in the same way you would define an ordinary float32.
+
+type SensorValue struct {
+  temp float32
+}
+
+exercise2.go
+------------
+package main
+
+import "fmt"
+
+// Country struct goes here
+type Country struct {
+  name string
+  capital string
+  latitude float32
+  longitude float32
+}
+
+func main() {
+	var france Country
+  fmt.Println(france)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
