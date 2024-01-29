@@ -236,6 +236,138 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Accessing and Modifying Struct Variables
+------------------------------------------
+We’ve defined our struct and created an instance, it’s time to use them. In this exercise, we will explore how to access and modify a struct’s variables.
+
+Let’s say we have an instance of the Student struct:
+
+	john := Student{"John", "Smith", 14, 9}
+
+We can access individual fields within struct using the name of the variable, a ., and the name of the field. We could access John’s first name like so:
+
+	fmt.Println(john.firstName)
+
+We can change the value of a field with an assignment statement:
+
+	john.age = 15
+
+John’s just turned 15!
+
+Using field access and modification finally allows us to be able to use structs in calculations for our program.
+
+Now let’s practice this concept!
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Given the struct Restaurant, create an instance of it with the following initial values:
+
+	. name: Codecademy Steakhouse
+	. typeOfRestaurant: Japanese
+	. yearEstablished: 2011
+
+Call this instance restaurant.
+
+Also, print out the restaurant instance.
+
+
+Hint
+Recall an instance of the Student struct is created and printed like so:
+
+student1 := Student{"John", "Smith", 14, 9}
+fmt.Println(student1)
+
+Checkpoint 2 Passed
+2.
+Print the value of each field of restaurant on a separate line.
+
+
+Hint
+The fields for student1 were printed like so:
+
+fmt.Println(student1.firstName)
+fmt.Println(student1.lastName)
+fmt.Println(student1.age)
+fmt.Println(student1.grade)
+
+restaurant should be printed in the same way.
+
+Checkpoint 3 Passed
+3.
+Change the values of name to “Skillsoft Steakhouse” and yearEstablished to “2022”.
+
+
+Hint
+Recall that the age field for student1 was changed in the following way:
+
+student1.age = 15
+
+Checkpoint 4 Passed
+4.
+Print out the updated restaurant instance.
+
+
+Hint
+The student1 instance was printed like so:
+
+fmt.Println(student1)
+
+exercise4.go
+------------
+package main
+
+import "fmt"
+
+type Restaurant struct {
+	name             string
+	typeOfRestaurant string
+	yearEstablished  int
+}
+
+func main() {
+
+	// Add your code here.
+  restaurant := Restaurant{"Codecademy Steakhouse", "Japanese", 2011}
+  fmt.Println(restaurant)
+  fmt.Println(restaurant.name)
+  fmt.Println(restaurant.typeOfRestaurant)
+  fmt.Println(restaurant.yearEstablished)
+  restaurant.name = "Skillsoft Steakhouse"
+  restaurant.yearEstablished = 2022
+  fmt.Println(restaurant)
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
