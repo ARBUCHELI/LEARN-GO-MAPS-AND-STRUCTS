@@ -429,6 +429,118 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Pointers to a Struct
+----------------------
+Without pointers, when a variable is passed into a function, only a copy of it is used inside the function. We can use pointers to modify values in our structs within a function. But how 
+do we get a pointer to our struct?
+
+Let’s explore this concept using the following struct as an example:
+
+type Employee struct {
+  firstName string
+  lastName string
+  age int
+  title string
+}
+
+We must first create an instance of Employee and then we create a pointer that will point to this instance. This is done like so:
+
+func main() {
+  steve := Employee{“Steve”, “Stevens”, 34, “Junior Manager”}
+  pointerToSteve := &steve
+}
+
+We can now use this pointer to change the values of the fields for steve. There are two ways to do this in Go:
+
+(*pointerToSteve).firstName
+
+Or a simpler, recommended method:
+
+pointerToSteve.firstName
+
+We can use these pointers to modify structs in our functions. Consider the following example:
+
+func (rectangle *Rectangle) modify(newLength float32){
+  rectangle.length = newLength
+}
+
+Notice that just inside the function modify() that rectangle is also a pointer. It is dereferenced without the use of the dereferencing operator just like pointerToSteve!
+
+We now have the ability to change Struct values in our functions! Let’s get some practice in!
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Write a function called updateBase() that will change the value of the base field of a Triangle instance.
+
+After writing the function, call it within main. Set the new base to be 13.
+
+
+Hint
+Recall the function we wrote to update the value of a Rectangle is:
+
+func (rectangle *Rectangle) modify(newLength float32){
+    rectangle.length = newLength
+}
+
+structs.go
+----------
+package main
+
+import "fmt"
+
+type Triangle struct {
+	height float32
+	base float32
+}
+
+// Checkpoint 1 code goes here
+func (triangle *Triangle) updateBase(newBase float32) {
+  triangle.base = newBase
+}
+
+func main() {
+
+  triangle := Triangle{10, 4}
+  
+  // Call the function here
+  triangle.updateBase(13)
+
+  fmt.Println(triangle)
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
