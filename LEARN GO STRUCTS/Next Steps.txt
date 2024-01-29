@@ -1,0 +1,19 @@
+* Next Steps
+------------
+You’ve completed Learn Go: Maps and Structs! What’s next?
+
+Congratulations, you’ve successfully completed the Learn Go: Maps and Structs course! You’ve learned how to create associations in data using maps and organize related data using structs.
+
+Great job on finishing the Go roadmap, here’s a quick recap:
+
+	. Learn Go: Fundamentals
+
+	. Learn Go: Conditionals
+
+	. Learn Go: Functions
+
+	. Learn Go: Loops and Arrays
+
+	. Learn Go: Maps and Structs <– Completed!
+
+Once again, congratulations on finishing the Learn Go: Maps and Structs course! We are excited to see what you accomplish next.
