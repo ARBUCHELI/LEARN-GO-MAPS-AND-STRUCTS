@@ -513,6 +513,142 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Arrays of Structs
+-------------------
+What can we do when dealing with many structs of the same type? We can use them in an array together! Let’s say we want to create an array of the following points: {1, 1} {7, 27} {12, 7} 
+{9, 25}
+
+We create an array of Points like so:
+
+points := []Point{{1, 1}, {7, 27}, {12, 7}, {9, 25}}
+
+If the points have names, we can also create the array like this:
+
+a = {1, 1}
+b = {7, 27}
+c = {12, 7}
+d = {9, 25}
+
+points := []Point{a, b, c, d}
+
+We can access the contents of this array like we would for an ordinary array. We can also access and modify the fields of each of the array elements.
+
+points := []Point{{1, 1}, {7, 27}, {12, 7}, {9, 25}}
+
+fmt.Println(points[0]) // Output will be {1, 1}
+
+points := []Point{{1, 1}, {7, 27}, {12, 7}, {9, 25}}
+
+points[1].x = 8
+points[1].y = 16
+
+fmt.Println(points[1]) // Output will be {8, 16}
+
+Arrays of structs allow us access many instances of our structs together in our programs! In the following checkpoints, we will practice working with arrays of structs.
+
+* Instructions
+--------------
+Checkpoint 1 Passed
+1.
+Given the struct Cake which represents a cake, create an array of Cakes called cakes that will contain the information for the following cakes:
+
+	. type: Chocolate, weight: 1000g
+	. type: Carrot, weight: 500g
+	. type Ice Cream, weight 2000g
+
+Hint
+Recall that we created an array of Points like so:
+
+points := []Point{{1, 1}, {7, 27}, {12, 7}, {9, 25}}
+
+or
+
+a = {1, 1}
+b = {7, 27}
+c = {12, 7}
+d = {9, 25}
+
+points := []Point{a, b, c, d}
+
+Checkpoint 2 Passed
+2.
+Print the weight of the chocolate cake.
+
+
+Hint
+To do this, you would have to access the weight field of the position in cakes that contains the chocolate cake. Recall from the points example:
+
+points := []Point{{1, 1}, {7, 27}, {12, 7}, {9, 25}}
+
+fmt.Println(points[1].y) // Output will be 27
+
+Checkpoint 3 Passed
+3.
+Change the weight of the carrot cake from 500g to 1500g.
+
+
+Hint
+You can access the array element that contains the carrot cake and change the value of its weight field.
+
+Recall to index a struct a specific index we used:
+
+points := []Point{{1, 1}, {7, 27}, {12, 7}, {9, 25}}
+
+points[1].x = 8
+points[1].y = 16
+fmt.Println(points) // Output will be {8, 16}
+
+structs.go
+----------
+package main
+
+import "fmt"
+
+type Cake struct {
+	typeOfCake string
+	weight int // Weight in grams
+}
+
+func main() {
+
+	// Checkpoint 1 code goes here	
+  cakes :=[]Cake{{"Chocolate", 1000}, {"Carrot", 500}, {"Ice Cream", 2000}}	
+	// Checkpoint 2 code goes here
+	fmt.Println(cakes[0].weight)
+	// Checkpoint 3 code goes here
+	cakes[1].weight = 1500
+	fmt.Println(cakes)
+
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
